@@ -22,7 +22,7 @@ function ajouterAtelier1() {
 	let nom = document.getElementById('inputNom').value;
 	let description = document.getElementById('inputDesc').value;
 	let capacite = document.getElementById('inputCapacite').value;
-	let url = "http://localhost:8080/atelier/new1?nom=" + nom + "&description=" + description + "&capacite=" + capacite;
+	let url = "atelier/new1?nom=" + nom + "&description=" + description + "&capacite=" + capacite;
 
 	$.post(url).then(function (data) {
 		alert("atelier bien ajouté");
@@ -44,11 +44,11 @@ function ajouterAtelier2() {
 	};
 
 	// dommage, cette syntaxe ne fonctionne pas..
-//		$.post("http://localhost:8080/atelier/new2", data=JSON.stringify(atelier), contentType='application/json');
+//		$.post("atelier/new2", data=JSON.stringify(atelier), contentType='application/json');
 
 	$.ajax({
 		type : "POST",
-		url : "http://localhost:8080/atelier/new2",
+		url : "atelier/new2",
 		dataType : 'json',
 		data : JSON.stringify(atelier),
 		contentType : 'application/json'
@@ -61,7 +61,7 @@ function ajouterAtelier2() {
 function ajouterParticipant() {
 	let participant = document.getElementById('inputNomPart').value;
 
-	let url = "http://localhost:8080/atelier/inscription?atelierID=" + id + "&participant=" + participant;
+	let url = "atelier/inscription?atelierID=" + id + "&participant=" + participant;
 
 	$.post(url).then(function (data) {
 		alert("participant bien ajouté");
@@ -69,7 +69,7 @@ function ajouterParticipant() {
 }
 
 function chargerAteliers() {
-	$.get("http://localhost:8080/atelier/all").then(function (data) {
+	$.get("atelier/all").then(function (data) {
 
 		$('#ateliers-table').bootstrapTable({
 			data: data,
@@ -83,7 +83,7 @@ function chargerAteliers() {
 }
 
 function chargerNomEcole() {
-	$.get("http://localhost:8080/atelier/hello").then(function (data) {
+	$.get("atelier/hello").then(function (data) {
 		if (data) {
 			document.getElementById('nom-ecole').textContent += " de "
 				+ data;
