@@ -98,6 +98,8 @@ public class AtelierController {
 	}
 	
 	/**
+	 * TODO (3) : passage du paramètre dans l'url
+	 * 
 	 * Mapping paramétré, on liste le nom de tous les paramètres (dans l'ordre) dans RequestParam.
 	 * Ce paramètre sera à fournir dans l'url, ex : 
 	 * localhost:8080/atelier/new1?nom=yoga,description=yoga,capacite=8
@@ -113,6 +115,8 @@ public class AtelierController {
 	}
 
 	/**
+	 * TODO (3) : passage du paramètre dans le body
+	 * 
 	 * Seconde manière d'ajouter un parmètre, en envoyant directement un objet au
 	 * format json. Utilisez postman pour tester.
 	 * 
@@ -128,6 +132,9 @@ public class AtelierController {
 	}
 	
 	
+	/**
+	 * TODO (3) : passage du paramètre dans l'url
+	 */
 	@RequestMapping(value = "/inscription", params = {"atelierID","participant"})
 	public boolean inscriptionParticipant(int atelierID, String participant) {
 		
@@ -146,7 +153,7 @@ public class AtelierController {
 	
 	
 	/**
-	 * Une méthode pratique pour retourner un element de la liste atelierListe qui a l'id spécifié.
+	 * Une méthode privée pratique pour retourner un element de la liste atelierListe qui a l'id spécifié.
 	 * @param id l'id à chercher
 	 */
 	private Atelier getById(int id) {
